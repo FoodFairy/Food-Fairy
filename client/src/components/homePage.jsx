@@ -5,11 +5,18 @@ class Home extends React.Component {
       value:''
     }
   }
+
+  inputChange (event) {
+    this.setState({
+      value: event.target.value
+    })
+  }
+
   render(){
     return(
       <div className='home'>
         <Header />
-        <input className="searchbox" type='text' value={this.state.value}/>
+        <input className="searchbox" type='text' value={this.state.value} onChange=this.inputChange.bind(this)/>
         <button className='submitButton'>Search</button>
       </div>
     )
